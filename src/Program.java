@@ -1,11 +1,6 @@
-import java.nio.file.Paths;
-
 public class Program {
     private static boolean init = false;
     private static final String fileFolder = "serialized-files/";
-
-    private Hamburger hamburger = new Hamburger();
-    private Person dennis = new Person("Dennis", 18, new Pet("David", 11, "Cat"));
 
     public static void main(String[] args) {
         if (init) {
@@ -20,10 +15,10 @@ public class Program {
         }
         init = true;
 
-        Serializer.serialize(dennis, Paths.get(fileFolder + "dennis.ser"));
-        System.out.println(Serializer.deSerialize(Paths.get(fileFolder + "dennis.ser")).toString());
-        System.out.println();
-        Serializer.serialize(hamburger, Paths.get(fileFolder + "hamburger.ser"));
-        System.out.println(Serializer.deSerialize(Paths.get(fileFolder + "hamburger.ser")).toString());
+        Hamburger originalHamburger = new Hamburger();
+        String serializedHamburgerFilePath = Serializer.serialize(originalHamburger, fileFolder, "hamburger", "ser");
+        Hamburger deSerializedHamburger = (Hamburger) Serializer.deSerialize(serializedHamburgerFilePath);
+
+        deSerializedHamburger.printInformation();
     }
 }
