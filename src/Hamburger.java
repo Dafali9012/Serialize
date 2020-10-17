@@ -18,6 +18,6 @@ public class Hamburger implements Serializable {
 
     @Override
     public String toString() {
-        return "Hamburger tastes "+taste+", looks "+appearance;
+        return "Hamburger tastes " + taste + ", looks " + appearance;
     }
 }

@@ -34,6 +34,6 @@ public class Person implements Serializable {
 
     @Override
     public String toString() {
-        return name+"("+age+") "+pet.getSpecies()+": "+pet.getName()+"("+pet.getAge()+")";
+        return name + "(" + age + ") " + pet.getSpecies() + ": " + pet.getName() + "(" + pet.getAge() + ")";
     }
 }
